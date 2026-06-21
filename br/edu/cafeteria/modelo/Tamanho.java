@@ -1,5 +1,5 @@
 package edu.cafeteria.modelo;
 
-enum Tamanho {
+public enum Tamanho {
     G,M,P
 }
