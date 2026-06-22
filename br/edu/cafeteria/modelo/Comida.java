@@ -5,13 +5,13 @@ public class Comida extends Product{
     private boolean isVegano;
     private boolean contem_glutem;
 
-    public Comida() {
-    }
-
-    public Comida(int tempo_Preparo, boolean contem_glutem, boolean isVegano) {
+    public Comida(String nome, String codigo, double preco_Base,
+                  int qntd_estocada, int tempo_Preparo, boolean isVegano,
+                  boolean contem_glutem) {
+        super(nome, codigo, preco_Base, qntd_estocada);
         this.tempo_Preparo = tempo_Preparo;
-        this.contem_glutem = contem_glutem;
         this.isVegano = isVegano;
+        this.contem_glutem = contem_glutem;
     }
 
     public int getTempo_Preparo() {

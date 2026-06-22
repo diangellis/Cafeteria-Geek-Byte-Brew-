@@ -6,10 +6,9 @@ public class Bebida extends Product{
     private double qnt_cafeina;
     private Tamanho tamanho;
 
-    public Bebida() {
-    }
-
-    public Bebida(double qnt_cafeina, Tamanho tamanho) {
+    public Bebida(String nome, String codigo, double preco_Base, int qntd_estocada,
+                  double qnt_cafeina, Tamanho tamanho) {
+        super(nome, codigo, preco_Base, qntd_estocada);
         this.qnt_cafeina = qnt_cafeina;
         this.tamanho = tamanho;
     }
