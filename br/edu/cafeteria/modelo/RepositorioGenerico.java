@@ -1,5 +1,7 @@
 package edu.cafeteria.modelo;
 
+import edu.cafeteria.excecao.DadoVazioException;
+
 import java.util.List;
 
 public class RepositorioGenerico<T extends Entidade>{
@@ -12,8 +14,7 @@ private final List<T> banco_de_dados;
 
     public void Cadastrar(T dado){
         if(dado == null){
-            System.out.println("Dado vazio!");
-            return;
+            throw new DadoVazioException("Dado Vazio");
         }
 
         for(T item : banco_de_dados){
@@ -30,8 +31,7 @@ private final List<T> banco_de_dados;
     public T Deletar(T dado){
 
         if(dado == null){
-            System.out.println("Dado inválido!");
-            return null;
+            throw new DadoVazioException("Dado Vazio");
         }
 
         for(T item : banco_de_dados){
@@ -41,7 +41,29 @@ private final List<T> banco_de_dados;
                 return item;
             }
         }
-        System.out.println("Dado não localizado!");
-        return null;
+        throw new DadoVazioException("Dado Não Econtrado!");
+
     }
+
+    public void Editar(T dadoAtualizado){
+        if(dadoAtualizado == null){
+            throw new DadoVazioException("Dado Vazio");
+        }
+
+        for(int i = 0; i < banco_de_dados.size(); i++){
+            if(banco_de_dados.get(i).getId().equals(dadoAtualizado.getId())){
+                banco_de_dados.set(i, dadoAtualizado);
+                System.out.println("Dado atualizado com sucesso!");
+                return;
+            }
+        }
+        throw new DadoVazioException("Dado Não Ecnontrado");
+    }
+
+    public void Ler(){
+        for(int i = 0; i < banco_de_dados.size(); i++){
+            System.out.println(banco_de_dados.get(i));
+        }
+    }
+
 }
