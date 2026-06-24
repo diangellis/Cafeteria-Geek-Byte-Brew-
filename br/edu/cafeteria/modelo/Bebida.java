@@ -28,4 +28,12 @@ public class Bebida extends Product{
     public void setTamanho(Tamanho tamanho) {
         this.tamanho = tamanho;
     }
+
+    @Override
+    public String toString() {
+        StringBuilder s = new StringBuilder(super.toString());
+        s.append("Cafeina (mg) : ").append(this.qnt_cafeina).append("\n");
+        s.append("Tamanho: ").append(this.tamanho).append("\n");
+        return s.toString();
+    }
 }
