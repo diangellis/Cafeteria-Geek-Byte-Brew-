@@ -37,4 +37,14 @@ public class Comida extends Product{
     public void setContem_glutem(boolean contem_glutem) {
         this.contem_glutem = contem_glutem;
     }
+
+    @Override
+    public String toString() {
+        StringBuilder s = new StringBuilder(super.toString());
+        s.append("Tempo de Preparo (min): ").append(this.tempo_Preparo).append("\n");
+        s.append("É vegano: ").append(this.isVegano).append("\n");
+        s.append("Tem glútem: ").append(contem_glutem).append("\n");
+        return s.toString();
+
+    }
 }
