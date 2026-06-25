@@ -1,6 +1,6 @@
-package br.edu.cafeteria.modelo;
+package edu.cafeteria.modelo;
 
-import br.edu.cafeteria.servico.Entidade;
+import edu.cafeteria.servico.Entidade;
 
 
 public abstract class Cliente implements Entidade {
@@ -11,7 +11,7 @@ public abstract class Cliente implements Entidade {
 
     private String nome;
     private String cpf;
-    private int    saldoXP;
+    private int saldoXP;
 
 
     public Cliente(String nome, String cpf) {

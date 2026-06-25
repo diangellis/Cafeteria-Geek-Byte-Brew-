@@ -1,6 +1,8 @@
 package edu.cafeteria.modelo;
 
-public abstract class Product implements Entidade{
+import edu.cafeteria.servico.Entidade;
+
+public abstract class Product implements Entidade {
     private String nome;
     private String codigo;
     private double preco_Base;

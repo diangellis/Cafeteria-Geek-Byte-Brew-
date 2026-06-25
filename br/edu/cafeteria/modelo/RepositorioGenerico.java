@@ -1,6 +1,7 @@
 package edu.cafeteria.modelo;
 
 import edu.cafeteria.excecao.DadoVazioException;
+import edu.cafeteria.servico.Entidade;
 
 import java.util.List;
 
