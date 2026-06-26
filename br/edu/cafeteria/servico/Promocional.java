@@ -1,6 +1,6 @@
-package edu.cafeteria.servico;
+package br.edu.cafeteria.servico;
 
-import edu.cafeteria.modelo.Venda;
+import br.edu.cafeteria.modelo.Venda;
 
 public interface Promocional {
     void aplicarDesconto(Venda venda);
