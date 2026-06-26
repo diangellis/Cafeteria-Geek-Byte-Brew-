@@ -1,4 +1,4 @@
-package br.edu.cafeteria.modelo;
+package edu.cafeteria.modelo;
 
 import edu.cafeteria.servico.Entidade;
 import edu.cafeteria.excecao.EstoqueInsuficienteException;

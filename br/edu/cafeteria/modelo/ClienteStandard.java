@@ -1,6 +1,4 @@
-package br.edu.cafeteria.modelo;
-
-import edu.cafeteria.modelo.Cliente;
+package edu.cafeteria.modelo;
 
 public class ClienteStandard extends Cliente {
 
