@@ -37,8 +37,8 @@ public class Venda {
 
     // Sobrecarga 
     public void adicionarItem(Product produto, int quantidade) throws EstoqueInsuficienteException {
-        if (produto.getEstoque() < quantidade) {
-            throw new EstoqueInsuficienteException(quantidade, produto.getEstoque());
+        if (produto.getQntd_estocada() < quantidade) {
+            throw new EstoqueInsuficienteException(quantidade, produto.getQntd_estocada());
         }
         itens.add(new ItemPedido(produto, quantidade));
     }

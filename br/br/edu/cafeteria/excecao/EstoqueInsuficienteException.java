@@ -1,6 +1,7 @@
-package edu.cafeteria.excecao;
+package br.edu.cafeteria.excecao;
 
 public class EstoqueInsuficienteException extends RuntimeException {
+	private static final long serialVersionUID = 1L;
 
     private final int quantidadeSolicitada;
     private final int quantidadeDisponivel;

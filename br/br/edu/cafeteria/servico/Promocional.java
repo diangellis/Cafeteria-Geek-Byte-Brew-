@@ -4,4 +4,4 @@ import br.edu.cafeteria.modelo.Venda;
 
 public interface Promocional {
     void aplicarDesconto(Venda venda);
-}
+} 

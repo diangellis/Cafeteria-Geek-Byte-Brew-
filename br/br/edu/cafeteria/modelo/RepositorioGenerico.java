@@ -1,9 +1,9 @@
-package edu.cafeteria.modelo;
-
-import edu.cafeteria.excecao.DadoVazioException;
-import edu.cafeteria.servico.Entidade;
+package br.edu.cafeteria.modelo;
 
 import java.util.List;
+
+import br.edu.cafeteria.excecao.DadoVazioException;
+import br.edu.cafeteria.servico.Entidade;
 
 public class RepositorioGenerico<T extends Entidade>{
 
