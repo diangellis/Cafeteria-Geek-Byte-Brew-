@@ -1,4 +1,4 @@
-package br.edu.cafeteria.servico;
+package edu.cafeteria.servico;
 
 
 public interface Entidade {

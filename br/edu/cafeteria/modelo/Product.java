@@ -1,6 +1,7 @@
-package br.edu.cafeteria.modelo;
+package edu.cafeteria.modelo;
 
-import br.edu.cafeteria.servico.Entidade;
+import edu.cafeteria.servico.Entidade;
+import edu.cafeteria.excecao.EstoqueInsuficienteException;
 
 public abstract class Product implements Entidade {
     private String nome;
@@ -36,26 +37,28 @@ public abstract class Product implements Entidade {
         return qntd_estocada;
     }
 
+
     public void reduzirEstoque(int quantidade) {
-    if (quantidade <= 0) {
-        throw new IllegalArgumentException("A quantidade deve ser maior que zero.");
+        if (quantidade <= 0) {
+            throw new IllegalArgumentException("A quantidade deve ser maior que zero.");
+        }
+
+        if (quantidade > qntd_estocada) {
+            throw new EstoqueInsuficienteException(quantidade, qntd_estocada);
+        }
+
+
+        qntd_estocada -= quantidade;
     }
 
-    if (quantidade > qntd_estocada) {
-        throw new IllegalArgumentException("Estoque insuficiente.");
-    }
-    
-   
+
     public void adicionarEstoque(int quantidade) {
-    if (quantidade <= 0) {
-        throw new IllegalArgumentException("A quantidade deve ser maior que zero.");
+        if (quantidade <= 0) {
+            throw new IllegalArgumentException("A quantidade deve ser maior que zero.");
+        }
+
+        qntd_estocada += quantidade;
     }
-
-    qntd_estocada += quantidade;
-}
-    qntd_estocada -= quantidade;
-}
-
 
     @Override
     public String toString() {

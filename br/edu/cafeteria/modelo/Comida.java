@@ -1,4 +1,4 @@
-package br.edu.cafeteria.modelo;
+package edu.cafeteria.modelo;
 
 public class Comida extends Product{
     private int tempo_Preparo;
