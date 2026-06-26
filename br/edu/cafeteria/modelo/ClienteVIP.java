@@ -1,6 +1,7 @@
 package br.edu.cafeteria.modelo;
 
-import br.edu.cafeteria.excecao.PontosInsuficientesException;
+import edu.cafeteria.excecao.PontosInsuficientesException;
+import edu.cafeteria.modelo.Cliente;
 
 
 public class ClienteVIP extends Cliente {

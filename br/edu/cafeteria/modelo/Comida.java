@@ -1,5 +1,7 @@
 package br.edu.cafeteria.modelo;
 
+import br.edu.cafeteria.modelo.Product;
+
 public class Comida extends Product{
     private int tempo_Preparo;
     private boolean isVegano;

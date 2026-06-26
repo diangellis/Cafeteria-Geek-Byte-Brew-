@@ -1,4 +1,4 @@
-package br.edu.cafeteria.excecao;
+package edu.cafeteria.excecao;
 
 
 public class PontosInsuficientesException extends Exception {
