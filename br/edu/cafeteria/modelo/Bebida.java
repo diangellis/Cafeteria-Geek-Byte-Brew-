@@ -1,6 +1,6 @@
-package edu.cafeteria.modelo;
+package br.edu.cafeteria.modelo;
 
-import edu.cafeteria.modelo.Tamanho;
+import br.edu.cafeteria.modelo.Tamanho;
 
 public class Bebida extends Product{
     private double qnt_cafeina;
