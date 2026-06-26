@@ -36,6 +36,19 @@ public abstract class Product implements Entidade {
         return qntd_estocada;
     }
 
+    public void reduzirEstoque(int quantidade) {
+    if (quantidade <= 0) {
+        throw new IllegalArgumentException("A quantidade deve ser maior que zero.");
+    }
+
+    if (quantidade > qntd_estocada) {
+        throw new IllegalArgumentException("Estoque insuficiente.");
+    }
+
+    qntd_estocada -= quantidade;
+}
+
+
     @Override
     public String toString() {
         StringBuilder s = new StringBuilder();
