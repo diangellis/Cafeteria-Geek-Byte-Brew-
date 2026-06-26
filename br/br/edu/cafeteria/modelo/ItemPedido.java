@@ -1,5 +1,6 @@
 package br.edu.cafeteria.modelo;
 
+
 public class ItemPedido {
 
     private Product produto;

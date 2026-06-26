@@ -102,13 +102,14 @@ public class Venda {
 
     @Override
     public String toString() {
-        StringBuilder sb = new StringBuilder();
-        sb.append("=== Venda #").append(id)
-          .append(" | Atendente: ").append(nomeAtendente).append(" ===\n");
-        for (ItemPedido item : itens) {
-            sb.append("  ").append(item).append("\n");
-        }
-        sb.append("  TOTAL: R$").append(String.format("%.2f", calcularTotal()));
-        return sb.toString();
+    String texto = "=== Venda #" + id + " | Atendente: " + nomeAtendente + " ===\n";
+
+    for (ItemPedido item : itens) {
+        texto += item + "\n";
     }
+
+    texto += "TOTAL: R$" + calcularTotal();
+
+    return texto;
+}
 }
