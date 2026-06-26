@@ -1,6 +1,6 @@
-package edu.cafeteria.modelo;
+package br.edu.cafeteria.modelo;
 
-import edu.cafeteria.servico.Entidade;
+import br.edu.cafeteria.servico.Entidade;
 
 public abstract class Product implements Entidade {
     private String nome;
@@ -8,16 +8,32 @@ public abstract class Product implements Entidade {
     private double preco_Base;
     private int qntd_estocada;
 
-    @Override
-    public String getId(){
-        return this.codigo;
-    }
-
     public Product(String nome, String codigo, double preco_Base, int qntd_estocada) {
         this.nome = nome;
         this.codigo = codigo;
         this.preco_Base = preco_Base;
         this.qntd_estocada = qntd_estocada;
+    }
+
+    @Override
+    public String getId() {
+        return this.codigo;
+    }
+
+    public String getNome() {
+        return nome;
+    }
+
+    public String getCodigo() {
+        return codigo;
+    }
+
+    public double getPreco_Base() {
+        return preco_Base;
+    }
+
+    public int getQntd_estocada() {
+        return qntd_estocada;
     }
 
     @Override
