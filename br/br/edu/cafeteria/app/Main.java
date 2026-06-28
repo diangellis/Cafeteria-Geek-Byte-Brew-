@@ -21,6 +21,7 @@ public class Main {
         repoProduto.Cadastrar(cafePro);
         repoProduto.Cadastrar(lembas);
         repoProduto.Cadastrar(portalCake);
+        System.out.println();
         
         
     	//Cadastro de Clientes
@@ -29,12 +30,15 @@ public class Main {
     	Cliente c2 = new ClienteStandard("Sofia Lima", "222.222.222-22");
     	repoCliente.Cadastrar(c2);
     	repoCliente.Ler();
+        System.out.println();
     	
     	//CRUD - Edição e Remoção
     	 Product pocaoManaAtualizada = new Bebida("Poção de Mana (Refill)", "B01", 13.00, 5, 0.0, Tamanho.G);
          repoProduto.Editar(pocaoManaAtualizada);
          System.out.println("Produto B01 atualizado para: " + pocaoManaAtualizada.getNome());
          repoProduto.Editar(pocaoMana);
+         System.out.println();
+         
  
         
         //Polimorfismo por Sobrescrita
@@ -44,7 +48,8 @@ public class Main {
         	v1.adicionarItem(cafePro, 2);
         	System.out.println(v1);
         	v1.finalizar();
-        	System.out.printf("XP acumulado por %s (taxa x1): %d XP%n", c1.getNome(), c1.getSaldoXP());
+        	System.out.printf("XP acumulado por %s (taxa x2): %d XP%n", c1.getNome(), c1.getSaldoXP());
+            System.out.println();
         	
         } catch (EstoqueInsuficienteException e) {
             System.err.println("Erro na venda: " + e.getMessage());
@@ -54,6 +59,7 @@ public class Main {
 
         //Dia Promocional 
         try {
+        	 System.out.println("Taxa de conversão XP: " + Cliente.PONTOS_POR_REAL + " XP = R$ 1,00");
         	 Promocional diaGeek = new DescontoDiaGeek();
         	 Venda v2 = new Venda ("Atendente 1", c2);
         	 v2.adicionarItem(lembas);
@@ -61,6 +67,7 @@ public class Main {
         	 v2.aplicarPromocao(diaGeek);
         	 System.out.println (v2);     
         	 v2.finalizar();
+             System.out.println();
         } catch (EstoqueInsuficienteException e) {
         	System.err.println("Erro na venda: " + e.getMessage());
         } catch (DadoVazioException e) {
@@ -79,24 +86,26 @@ public class Main {
             System.err.println("Erro na venda: " + e.getMessage());
         } catch (PontosInsuficientesException e) {
         	System.out.println("PontosInsuficientesException capturada: " + e.getMessage());
-        	System.out.printf("  Necessário: %d XP | Disponível: %d XP | Faltam: %d XP%n",
+        	System.out.printf("Necessário: %d XP | Disponível: %d XP | Faltam: %d XP%n",
                 e.getPontosNecessarios(), e.getPontosDisponiveis(), e.getPontosFaltantes());
         }
+        System.out.println();
         
         //Resgate com XP
-        c1.acumularXP(800.00);
+        c1.acumularXP(200.0);
         try {
         	Venda v4 = new Venda("Atendente 2", c1);
         	v4.adicionarItem(portalCake);
-        	v4.finalizarComResgate();
         	System.out.println(v4);
+        	v4.finalizarComResgate();
+            System.out.println();
         } catch (EstoqueInsuficienteException e) {
         	System.err.println("Erro na venda: " + e.getMessage());
         } catch (DadoVazioException e) {
         	System.err.println("Erro de validação: " + e.getMessage());
         } catch (PontosInsuficientesException e) {
-        	System.out.println("[PontosInsuficientesException capturada]: " + e.getMessage());
-        	System.out.printf("  Necessário: %d XP | Disponível: %d XP | Faltam: %d XP%n",
+        	System.out.println("PontosInsuficientesException capturada: " + e.getMessage());
+        	System.out.printf("Necessário: %d XP | Disponível: %d XP | Faltam: %d XP%n",
                 e.getPontosNecessarios(), e.getPontosDisponiveis(), e.getPontosFaltantes());
         }
         
@@ -110,13 +119,35 @@ public class Main {
         } catch (EstoqueInsuficienteException e) {
             System.err.println(e.getMessage());
         }
+        System.out.println();
         
+        //Venda com Estoque Insuficiente
         try {
             Venda vendaErrada = new Venda("Atendente");
             vendaErrada.adicionarItem(new Bebida("Teste", "T99", 1.0, 0, 0, Tamanho.P), 10);
         } catch (EstoqueInsuficienteException e) {
+            System.out.println("Tentativa de Venda com Estoque Insuficiente");
             System.out.println(e.getMessage());
+            System.out.println();
         }
+
+        
+     // Polimorfismo por Coerção — downcast explícito
+        System.out.println("=== Coerção de tipos ===");
+        java.util.List<Product> cardapio = new java.util.ArrayList<>();
+        cardapio.add(pocaoMana);
+        cardapio.add(lembas);
+
+        for (Product p : cardapio) {
+            if (p instanceof Bebida) {
+                Bebida b = (Bebida) p;
+                System.out.println("Bebida: " + b.getNome() + " | Tamanho: " + b.getTamanho());
+            } else if (p instanceof Comida) {
+                Comida c = (Comida) p;
+                System.out.println("Comida: " + c.getNome() + " | Vegano: " + c.isVegano());
+            }
+        }
+
     }
         	
         
