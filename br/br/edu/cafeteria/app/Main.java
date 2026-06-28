@@ -80,6 +80,7 @@ public class Main {
         	Venda v3 = new Venda("Atendente 2", c1);
         	v3.adicionarItem(portalCake, 2);
             System.out.printf("Saldo atual de %s: %d XP%n", c1.getNome(), c1.getSaldoXP());
+			System.out.printf("Total da venda a ser pago: R$%.2f%n", v3.calcularTotal());
  
             v3.finalizarComResgate();  //Lança a excessão
             System.out.println(v3);
