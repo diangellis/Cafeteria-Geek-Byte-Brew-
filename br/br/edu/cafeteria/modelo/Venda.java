@@ -40,24 +40,7 @@ public class Venda {
         if (produto.getQntd_estocada() < quantidade) {
             throw new EstoqueInsuficienteException(quantidade, produto.getQntd_estocada());
         }
-
-        ItemPedido itemExistente = null;
-        for (ItemPedido item : itens) {
-            if (item.getProduto().getId().equals(produto.getId())) {
-                itemExistente = item;
-                break;
-            }
-        }
         itens.add(new ItemPedido(produto, quantidade));
-    }
-
-    public void atualizarPrecoDoItem(Product produto, double novoPreco) {
-        for (ItemPedido item : itens) { // Aqui mexemos na lista real 'itens', que é mutável por dentro
-            if (item.getProduto().getId().equals(produto.getId())) {
-                item.setPrecoUnitarioAplicado(novoPreco);
-                return;
-            }
-        }
     }
 
     public void aplicarPromocao(Promocional promocao) {
@@ -119,15 +102,14 @@ public class Venda {
 
     @Override
     public String toString() {
-        String texto = "=== Venda #" + id + " | Atendente: " + nomeAtendente + " ===\n";
+    String texto = "=== Venda #" + id + " | Atendente: " + nomeAtendente + " ===\n";
 
-        for (ItemPedido item : itens) {
-            texto += "  " + item + "\n";
-        }
-
-
-        texto += "TOTAL: R$" + String.format("%.2f", calcularTotal());
-
-        return texto;
+    for (ItemPedido item : itens) {
+        texto += item + "\n";
     }
+
+    texto += "TOTAL: R$" + calcularTotal();
+
+    return texto;
+}
 }

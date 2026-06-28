@@ -21,10 +21,6 @@ public class ItemPedido {
     public int getQuantidade() { return quantidade; }
     public double getPrecoUnitarioAplicado() { return precoUnitarioAplicado; }
 
-    public void setQuantidade(int quantidade) {
-        this.quantidade = quantidade;
-    }
-
     public void setPrecoUnitarioAplicado(double preco) {
         this.precoUnitarioAplicado = preco;
     }
