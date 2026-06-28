@@ -26,6 +26,7 @@ public class Main {
         
     	//Cadastro de Clientes
     	Cliente c1 = new ClienteVIP("João Souza", "111.111.111-11");
+        c1.acumularXP(50.0);
     	repoCliente.Cadastrar(c1);
     	Cliente c2 = new ClienteStandard("Sofia Lima", "222.222.222-22");
     	repoCliente.Cadastrar(c2);
