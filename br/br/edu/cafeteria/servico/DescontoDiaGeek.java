@@ -1,8 +1,8 @@
-package edu.cafeteria.servico;
+package br.edu.cafeteria.servico;
 
-import edu.cafeteria.modelo.Bebida;
-import edu.cafeteria.modelo.ItemPedido;
-import edu.cafeteria.modelo.Venda;
+import br.edu.cafeteria.modelo.Bebida;
+import br.edu.cafeteria.modelo.ItemPedido;
+import br.edu.cafeteria.modelo.Venda;
 
 public class DescontoDiaGeek implements Promocional {
 
