@@ -27,6 +27,7 @@ public class Main {
     	//Cadastro de Clientes
     	Cliente c1 = new ClienteVIP("João Souza", "111.111.111-11");
         c1.acumularXP(50.0);
+   	    System.out.println("Taxa de conversão XP: " + Cliente.PONTOS_POR_REAL + " XP = R$ 1,00");
     	repoCliente.Cadastrar(c1);
     	Cliente c2 = new ClienteStandard("Sofia Lima", "222.222.222-22");
     	repoCliente.Cadastrar(c2);
@@ -60,7 +61,6 @@ public class Main {
 
         //Dia Promocional 
         try {
-        	 System.out.println("Taxa de conversão XP: " + Cliente.PONTOS_POR_REAL + " XP = R$ 1,00");
         	 Promocional diaGeek = new DescontoDiaGeek();
         	 Venda v2 = new Venda ("Atendente 1", c2);
         	 v2.adicionarItem(lembas);
