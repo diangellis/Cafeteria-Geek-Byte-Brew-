@@ -11,7 +11,6 @@ import br.edu.cafeteria.servico.Promocional;
 public class Main {
 
     static final Scanner sc = new Scanner(System.in);
-
     static final java.util.List<Product> produtos  = new ArrayList<>();
     static final java.util.List<Cliente> clientes  = new ArrayList<>();
     static final RepositorioGenerico<Product> repoProduto = new RepositorioGenerico<>(new ArrayList<>());
@@ -122,7 +121,6 @@ public class Main {
                         cliente.getNome(), cliente.getSaldoXP());
         }
     }
-
 
     static void menuClientes() {
         int op;
